@@ -18,3 +18,4 @@ bin/
 logs
 .DS_Store
 **.DS_Store
+spring-cloud-demo-config/
