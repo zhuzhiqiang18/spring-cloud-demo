@@ -35,7 +35,7 @@ public class CookieCheckInterceptor implements HandlerInterceptor {
 
         LOGGER.info("request -> path:{}, params:{}", request.getRequestURI(), JSON.toJSONString( request.getParameterMap() ) );
 
-        Cookie[] cookies = request.getCookies();
+       /* Cookie[] cookies = request.getCookies();
         if ( null == cookies || cookies.length == 0 ) {
             printError( response, JSON.toJSONString(ResultModel.createFail("needLogin")) );
             return false;
@@ -61,7 +61,7 @@ public class CookieCheckInterceptor implements HandlerInterceptor {
             return false;
         }
 
-        AccountHelper.setUserId( userId );
+        AccountHelper.setUserId( userId );*/
         return true;
     }
 

@@ -36,6 +36,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
@@ -120,6 +121,9 @@
             <version>1.16.16</version>
         </dependency>
 
+
+
+
     </dependencies>
 
     <dependencyManagement>
@@ -146,7 +150,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.30</version>
+                        <version>5.1.35</version>
                     </dependency>
                 </dependencies>
             </plugin>
