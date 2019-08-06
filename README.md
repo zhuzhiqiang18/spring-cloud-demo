@@ -1,6 +1,6 @@
-# Introduction
+# 说明
 
-1. This project is a demo project for spring cloud microservice structure, using spring-boot, including: 
+1. 使用的组件: 
 	- spring cloud eureka
 	- spring cloud config
 	- ribbon
@@ -19,11 +19,9 @@
 	- Task executor thread pool
 	- HealthCheck, globalHealthCheck
 
-2. This project has a login page. After login, you can see the first page of momentList, add new moments to the list, see the comments of each moment, and add new comments to the comment list. 
+# 运行
 
-# Run
-
-1. first of all, you should get a redis started, and a mysql started. Then, the sql for creating databases and dbs is as below:
+1. 启动redis，准备mysql数据库:
 
 ```
 create database test;
@@ -64,8 +62,8 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 
-2. Java 8 and maven 3 are required.
-3. run command in order:
+2. Java8  maven3.
+3. 运行顺序:
 
 ```
 	cd spring-cloud-parent
@@ -87,7 +85,7 @@ CREATE TABLE `comment` (
 	cd spring-cloud-gateway
 	mvn clean spring-boot:run
 ```
-4. open ```http://127.0.0.1:7001/index``` in brower
+4. 访问页面 ```http://127.0.0.1:7001/index```
 
 
 # Code explain
