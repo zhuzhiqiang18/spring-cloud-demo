@@ -1,5 +1,6 @@
 package spring.cloud.gateway.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -36,11 +37,20 @@ public class AccountController {
 
 	@PostMapping("/account/login")
 	@ResponseBody
+	@HystrixCommand(fallbackMethod = "loginErr")
 	public ResultModel<String> login(
 			HttpServletResponse response,
 			@RequestParam String userId,
 			@RequestParam String password ){
 		return this.accountService.login(response, userId, password);
+	}
+
+	//服务不可用降级回调
+	//此处必须方法签名与原方法一致
+	public ResultModel<String> loginErr(HttpServletResponse response,
+										 String userId,
+										 String password){
+			return ResultModel.createFail("500","服务不可用");
 	}
 
 }
